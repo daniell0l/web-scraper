@@ -7,7 +7,7 @@ export class DeleteProductController {
 
     const service = new DeleteProductService()
 
-    const result = await service.execute(id)
+    await service.execute(id)
 
     return response.status(200).json({message: 'delete with success'})
   }
