@@ -1,6 +1,6 @@
 # 💡sobre o projeto
 
-Um projeto simples utilizando o puppeteer para fazer raspagem de dados, e me retornando um filtro de alguns dados e sendo consumido pela api.
+Um projeto simples utilizando o puppeteer para fazer raspagem de dados, me retornando um filtro de alguns dados e sendo consumido pela api.
 
 # 🛸 Tecnologias
 
