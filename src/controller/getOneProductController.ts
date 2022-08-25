@@ -1,17 +1,18 @@
 import { Request, Response } from "express";
-import  { readFile } from "../database/functions"
-
-
-
+import { GetOneProductService } from "../services/getOneProductService";
 export class GetOneProductController {
   async handle(request: Request, response: Response) {
     const { id } = request.params
-  
-    const currentData = readFile()
-  
-    const getItem = currentData.find((item: { id: string; }) => item.id == id)
-    
-    return response.status(200).json(getItem)
+
+    const service = new GetOneProductService()
+
+    const result = await service.execute(id)
+
+    if(result instanceof Error) {
+      return response.status(400).json(result.message)
+    }
+
+    return response.status(200).json(result)
   }
 }
 

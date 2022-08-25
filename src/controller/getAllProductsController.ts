@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import  { readFile } from "../database/functions"
-
-
+import { GetAllProductService } from "../services/getAllProductsService";
 export class GetAllProductsController {
   async handle(request: Request, response: Response) {
-    const data = readFile()
-    response.send(data)
+    const service = new GetAllProductService()
+
+    const result = await service.execute()
+
+    return response.json(result)  
+    
   }
 }
- 
-

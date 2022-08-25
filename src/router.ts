@@ -1,14 +1,18 @@
 import { Router } from "express";
+
+import { CreateProductController } from "./controller/createProductController";
+import { DeleteProductController } from "./controller/deleteProductController";
 import { GetAllProductsController } from "./controller/getAllProductsController";
 import { GetOneProductController } from "./controller/getOneProductController";
+import { UpdateProductController } from "./controller/updateProductController";
 
 const router = Router()
 
 router.get("/products", new GetAllProductsController().handle);
 router.get("/products/:id", new GetOneProductController().handle);
-/* routes.post("/products", new CreateCategoryController().handle);
-routes.delete("/products/:id", new DeleteCategoryController().handle);
-routes.put("/products/:id", new UpdateCategoryController().handle); */
+router.post("/products", new CreateProductController().handle);
+router.delete("/products/:id", new DeleteProductController().handle);
+router.put("/products/:id", new UpdateProductController().handle);
 
 
 
