@@ -1,17 +1,8 @@
 import { Router, Request, Response } from "express";
-import fs from 'fs';
+import  { readFile } from "./database/functions"
+import { writeFile } from "./database/functions"
 
 const router = Router();
-
-const readFile = () => {
-  const data = fs.readFileSync('src/database/data.json', 'utf-8');
-  return JSON.parse(data)
-}
-
-const writeFile = (data: any) => {
-  const updateFile = JSON.stringify(data, null, 2)
-  fs.writeFileSync('src/database/data.json', updateFile, 'utf-8')
-}
 
 router.get("/products", (request: Request, response: Response) => {
   const data = readFile()
