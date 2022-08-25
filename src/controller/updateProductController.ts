@@ -1,39 +1,20 @@
 import { Request, Response } from "express";
-import  { readFile, writeFile } from "../database/functions"
+import { UpdateProductService } from "../services/updateProductService";
 
 export class UpdateProductController {
   async handle(request: Request, response: Response) {
     const { id } = request.params
-    if (!id) return response.status(400).json({ message: 'id is required!' })
-  
     const { description, price, reviews, title } = request.body
   
-    const currentData = readFile()
-  
-    const getItem = currentData.findIndex((item: { id: string; }) => item.id == id)
-  
-    if (!getItem) return response.status(400).json({ message: "item not exists!" })
-  
-    const {
-      id: newId,
-      description: newDescription,
-      price: newPrice,
-      reviews: newReviews,
-      title: newTitle
-    } = currentData[getItem]
-  
-    const newObject = {
-      id: id ? id : newId,
-      description: description ? description : newDescription,
-      price: price ? price : newPrice,
-      reviews: reviews ? reviews : newReviews,
-      title: title ? title : newTitle
+    const service = new UpdateProductService()
+
+    const result = await service.execute({id, description, price, reviews, title})
+
+    if(result instanceof Error) {
+      return response.status(400).json(result.message)
     }
   
-    currentData[getItem] = newObject
-    writeFile(currentData)
-  
-    return response.status(201).json(newObject)
+    return response.status(201).json(result)
   }
 }
 

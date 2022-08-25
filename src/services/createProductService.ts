@@ -1,4 +1,3 @@
-import { Product } from "puppeteer";
 import { readFile, writeFile } from "../database/functions";
 
   type ProductRequest = {
@@ -9,7 +8,7 @@ import { readFile, writeFile } from "../database/functions";
   }
 
   export class CreateProductService {
-    async execute({ description, price, reviews, title }: ProductRequest): Promise<Error | Product> {
+    async execute({ description, price, reviews, title }: ProductRequest): Promise<any> {
         const currentData = readFile()
 
         const id = Math.random().toString(32).substring(2, 9)

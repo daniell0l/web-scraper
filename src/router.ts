@@ -14,12 +14,4 @@ router.post("/products", new CreateProductController().handle);
 router.delete("/products/:id", new DeleteProductController().handle);
 router.put("/products/:id", new UpdateProductController().handle);
 
-
-
-
-
-
-
-
 export  { router }
-
