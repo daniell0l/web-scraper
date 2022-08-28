@@ -1,8 +1,8 @@
 # indice
-- [sobre o projeto](#-sobre-o-projeto)
+- [sobre o projeto](#sobre-o-projeto)
 - [tecnologias](#-tecnologias)
 - [minhas implementações](#-minhas-implementações)
-- [como utilizar](#-como-utilizar)
+- [como utilizar](#como-utilizar)
 
 
 
