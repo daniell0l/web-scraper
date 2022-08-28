@@ -30,38 +30,29 @@ Um projeto simples utilizando o puppeteer para fazer raspagem de dados, me retor
 - [x] cria api para consumir os produtos
 
 # ⚙️ como utilizar
-
+```bash
 1 - Clonar o repositório:
 
-```bash
  https://github.com/daniell0l/web-scraper.git
-```
 
 2 - instale as dependências:
-
-```bash
- npm
- ```
+   `npm`
 
 3 - Rode a aplicação:
+   `npm start`
 
-```bash
-`npm start`
-```
-
-4 -  Acesse a aplicação no seu navegador em
-* `http://localhost:3000/products` para visualizar os arquivos dos clientes
-
+4 - Acesse a aplicação no seu navegador em
+   `http://localhost:3000/products` para visualizar os arquivos dos clientes
 
 5 - Para manipular os arquivos, utilize uma das ferramentas 
-* `insomnia`
-* `postman`
+   `insomnia`
+   `postman`
 
 6 - Deixei uma copia do arquivo do insomnia dentro da docs
 
-```bash
 Abra o insomnia, configurações, data, import data, from file e em seguida procure a pasta docs dentro do projeto e selecione o arquivo do insomnia
-```
 
 7 - Para criar, busca, atualizar ou deleta, utilize a rota:
-* `http://localhost:3000/products`
+   `http://localhost:3000/products`
+
+```
